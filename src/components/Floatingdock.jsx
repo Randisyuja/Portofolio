@@ -21,10 +21,10 @@ export default function FloatingDock() {
           <Book className="h-4 w-4" />
         </a>
         <div className="w-px h-8 bg-gray-700"></div>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-gray-700 transition-colors">
+        <a href="https://github.com/Randisyuja" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-gray-700 transition-colors">
           <Github className="h-4 w-4" />
         </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-gray-700 transition-colors">
+        <a href="https://www.linkedin.com/in/randi-syuja/" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-gray-700 transition-colors">
           <Linkedin className="h-4 w-4" />
         </a>
         <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-gray-700 transition-colors">

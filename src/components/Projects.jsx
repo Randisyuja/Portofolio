@@ -1,38 +1,46 @@
 import React from 'react';
 import { Globe } from 'lucide-react';
+import siap from "../assets/porto.mp4";
+import pelikan from "../assets/Pelikan.jpg";
+import car from "../assets/cardealerr.png";
+import pwmanager from "../assets/pwmanager.png"
 
 export default function Projects() {
   const projects = [
     {
-      title: "AI-Powered Platform",
-      image: "🤖",
-      period: "2024 - Present",
-      description: "Building an innovative AI platform that helps developers automate workflows and increase productivity.",
-      tags: ["React", "Python", "TensorFlow", "AWS"],
+      title: "SIAP",
+      type: "video",
+      image: siap,
+      period: "2025",
+      description: "Developed a web-based payment and installment management system for local community residents. Designed to streamline financial tracking, the platform provides a structured database to manage citizen contributions, ensuring transparency and accountability in community fund management.",
+      tags: ["Python", "Django", "Bootstrap", "PostgreSQL"],
       link: "#"
     },
     {
-      title: "E-Commerce Solution",
-      image: "🛒",
-      period: "2023",
-      description: "Developed a full-featured e-commerce platform with payment integration and inventory management.",
-      tags: ["Next.js", "Stripe", "PostgreSQL", "Tailwind"],
+      title: "Pelikan",
+      type: "image",
+      image: pelikan,
+      period: "2024",
+      description: "Developed a comprehensive e-Monev platform for the Ministry of Marine Affairs and Fisheries during an internship program. Collaborated within a development team to build a system that monitors and evaluates public information disclosure performance across all work units nationwide in real-time.",
+      tags: ["PHP", "Laravel", "Bootstrap", "MySQL"],
       link: "#"
     },
     {
-      title: "Social Media App",
-      image: "📱",
+      title: "Car Dealer",
+      type: "image",
+      image: car,
       period: "2022",
-      description: "Created a real-time social networking application with chat, posts, and user interactions.",
-      tags: ["React Native", "Firebase", "Node.js"],
+      description: "Developed a comprehensive car dealership platform as a Capstone Project for the MSIB (Certified Independent Study) program. Engineered a full-stack solution featuring vehicle inventory management, an automated test drive booking system, and an administrative dashboard to streamline sales operations and lead management.",
+      tags: ["Django", "Python", "Bootstrap", "PostgreSQL"],
       link: "#"
     },
     {
-      title: "Dashboard Analytics",
-      image: "📊",
-      period: "2021",
-      description: "Built a comprehensive analytics dashboard with real-time data visualization and reporting features.",
-      tags: ["React", "D3.js", "Node.js", "MongoDB"],
+      title: "Secure Password Vault",
+      type: "image",
+      image: pwmanager,
+      period: "2024",
+      description: "Developed a secure desktop application for password management using Python and Tkinter. Integrated advanced security measures using the Cryptography library, implementing PBKDF2 for key derivation and Fernet (AES-128) encryption to ensure user data is stored securely and is inaccessible without a master password.",
+      tags: ["Python", "Tkinter", "Cryptography", "JSON"],
       link: "#"
     }
   ];
@@ -53,7 +61,25 @@ export default function Projects() {
         {projects.map((project, index) => (
           <div key={index} className="rounded-lg bg-gray-800/50 overflow-hidden border border-gray-700 hover:shadow-lg hover:border-gray-600 transition-all">
             <div className="h-40 bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-6xl">
-              {project.image}
+              {project.type === "video" && (
+                <video
+                  src={project.image}
+                  muted
+                  loop
+                  playsInline
+                  onMouseEnter={(e) => e.target.play()}
+                  onMouseLeave={(e) => e.target.pause()}
+                  className="w-full h-full object-cover"
+                />
+              )}
+
+              {project.type !== "video" && (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+              )}
             </div>
             <div className="p-4">
               <h3 className="font-semibold text-base mb-1">{project.title}</h3>
@@ -66,10 +92,6 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-              <a href={project.link} className="inline-flex items-center gap-2 px-3 py-1 text-[10px] font-semibold rounded-md bg-red-600 text-white hover:bg-red-700 transition-colors">
-                <Globe className="h-3 w-3" />
-                View Project
-              </a>
             </div>
           </div>
         ))}

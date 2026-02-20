@@ -1,35 +1,32 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
+import unkrisLogo from "../assets/unkris.png";
+import earth from "../assets/earth.png";
+import kkp from "../assets/kkp.png";
+import softuni from "../assets/softuni.png"
+
 
 export default function About() {
   const workExperience = [
     {
-      company: "Tech Startup",
-      logo: "🚀",
-      position: "Senior Software Engineer",
-      period: "Jan 2023 - Present",
-      description: "Leading development of cutting-edge web applications using React, Node.js, and cloud technologies."
+      company: "Kementerian Kelautan dan Perikanan",
+      logo: kkp,
+      position: "Intern Web Developer",
+      period: "Aug 2024 - Okt 2024"
     },
     {
-      company: "Digital Agency",
-      logo: "💼",
-      position: "Full Stack Developer",
-      period: "Jun 2020 - Dec 2022",
-      description: "Built scalable web solutions for enterprise clients using modern JavaScript frameworks."
+      company: "Software University (SoftUni) Indonesia",
+      logo: softuni,
+      position: "Software Developer (Independent Study)",
+      period: "Sep 2024 - Jan 2025",
     },
-    {
-      company: "Startup Inc",
-      logo: "⚡",
-      position: "Frontend Developer",
-      period: "Jan 2018 - May 2020",
-      description: "Developed responsive user interfaces and implemented design systems for multiple product lines."
-    }
   ];
 
   const skills = [
-    "JavaScript", "React", "Node.js", 
-    "Python", "PostgreSQL", "MongoDB", "Huawei Cloud", "Docker", 
-    "Kubernetes", "Git", "REST APIs", "GraphQL", "Tailwind CSS"
+    "Python", "Javascript", "PHP", 
+    "Django", "Flask", "React.js", "Laravel", "Bootstrap", 
+    "Tailwind CSS", "PostgreSQL", "MySQL", "MongoDB", "REST APIs",
+    "Docker", "Huawei Cloud", "🧠Whatever I need to learn to get the job done"
   ];
 
   return (
@@ -39,15 +36,14 @@ export default function About() {
         <h2 className="text-xl font-bold mb-4">A little about myself...</h2>
         <div className="prose max-w-full text-sm text-gray-400 space-y-4">
           <p>
-            I'm passionate about creating innovative solutions and building things that make a difference. 
-            Technology is my canvas, and code is my art.
+            I am a Software Engineering graduate with a specialized focus on Backend and Fullstack Development. My expertise lies in architecting secure, data-driven applications—ranging from encrypted desktop security tools to comprehensive web-based monitoring and evaluation platforms used at a national scale.
           </p>
           <p>
-            I love thinking critically and asking questions—it's the best way to truly learn and understand the world. 
+            I am passionate about building clean, efficient, and scalable systems. Whether I’m designing RESTful APIs with Django or crafting interactive user interfaces with React, I strive to create seamless digital experiences that solve real-world problems. I thrive on the challenge of turning complex requirements into robust software solutions.
             <span className="bg-yellow-900/30 px-1 py-0.5 rounded font-medium italic"> "The more I learn, the less I realize I know"</span>
           </p>
           <p>
-            Currently focused on building scalable web applications and exploring the latest in AI and machine learning.
+            Currently focused on: Building scalable SaaS solutions, optimizing database performance, and exploring Cloud-native architectures to enhance application reliability.
           </p>
         </div>
       </section>
@@ -61,7 +57,7 @@ export default function About() {
               <div className="flex gap-4">
                 <div className="flex-none">
                   <div className="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center text-2xl">
-                    {job.logo}
+                    <img src={job.logo} alt="Logo" className="w-full h-full object-cover rounded-full"/>
                   </div>
                 </div>
                 <div className="flex-grow">
@@ -73,7 +69,6 @@ export default function About() {
                     <span className="text-xs text-gray-400">{job.period}</span>
                   </div>
                   <div className="text-xs text-gray-400 mb-2">{job.position}</div>
-                  <p className="text-xs text-gray-500">{job.description}</p>
                 </div>
               </div>
             </div>
@@ -89,7 +84,7 @@ export default function About() {
             <div className="flex gap-4">
               <div className="flex-none">
                 <div className="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center text-2xl">
-                  🎓
+                  <img src={unkrisLogo} alt="Logo Universitas Krisnadwipayana" className="w-full h-full object-cover rounded-full"/>
                 </div>
               </div>
               <div className="flex-grow">
@@ -101,6 +96,22 @@ export default function About() {
               </div>
             </div>
           </div>
+          <div className="rounded-lg bg-gray-800/50 p-4">
+            <div className="flex gap-4">
+              <div className="flex-none">
+                <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-2xl">
+                  <img src={earth} alt="Logo Universitas Krisnadwipayana" className="w-full h-full object-cover rounded-full"/>
+                </div>
+              </div>
+              <div className="flex-grow">
+                <div className="flex items-center justify-between mb-1">
+                  <h3 className="font-semibold text-sm">Life</h3>
+                  <span className="text-xs text-gray-400">2002 - Present</span>
+                </div>
+                <div className="text-xs text-gray-400">Continuing Education</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -109,7 +120,7 @@ export default function About() {
         <h2 className="text-xl font-bold mb-4">Skills</h2>
         <div className="flex flex-wrap gap-2">
           {skills.map((skill, index) => (
-            <span key={index} className="px-3 py-1 text-xs font-semibold rounded-md bg-red-600 text-white hover:bg-red-700 transition-colors">
+            <span key={index} className="px-3 py-1 text-xs font-semibold rounded-md bg-white text-black hover:bg-gray-400 transition-colors">
               {skill}
             </span>
           ))}
