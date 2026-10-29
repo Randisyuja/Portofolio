@@ -4,16 +4,16 @@ import unkrisLogo from "../assets/unkris.png";
 import earth from "../assets/earth.png";
 import kkp from "../assets/kkp.png";
 import softuni from "../assets/softuni.png";
+import sgsLogo from "../assets/sgs.png";
 
 export default function About() {
   const workExperience = [
     {
       company: "PT Setia Guna Selaras",
-      position: "Software Developer",
+      logo: sgsLogo,
+      position: "Full-Stack Engineer",
       period: "July 2026 – Present",
       type: "Full-time",
-      badgeText: "SGS",
-      badgeColor: "from-red-600 to-rose-600",
       highlights: [
         "Architecting and optimizing enterprise backend services using Python and Django to automate core operational workflows.",
         "Designing relational database schemas in PostgreSQL, improving data normalization and query performance for mission-critical modules.",
@@ -22,7 +22,7 @@ export default function About() {
     },
     {
       company: "PT Nuindo Duta Khatulistiwa",
-      position: "Software Developer",
+      position: "Web Developer",
       period: "Nov 2025 – July 2026",
       type: "Contract",
       badgeText: "NDK",
@@ -36,6 +36,7 @@ export default function About() {
     {
       company: "Software University (SoftUni) Indonesia",
       logo: softuni,
+      logoScale: "scale-[1.28]",
       position: "Software Developer (Certified Independent Study - MSIB)",
       period: "Sep 2024 – Jan 2025",
       type: "Apprenticeship",
@@ -48,6 +49,7 @@ export default function About() {
     {
       company: "Kementerian Kelautan dan Perikanan (KKP)",
       logo: kkp,
+      logoScale: "scale-[1.28]",
       position: "Web Developer Intern",
       period: "Aug 2024 – Oct 2024",
       type: "Internship",
@@ -80,6 +82,7 @@ export default function About() {
       degree: "Bachelor of Computer Science (Informatics Engineering)",
       period: "2021 – 2025",
       logo: unkrisLogo,
+      logoScale: "scale-[1.25]",
       description: "Specialized in Software Engineering, Relational Database Systems, Cryptography, and Web Architectures. Built solid foundation in computer science theory and practical software development."
     },
     {
@@ -87,6 +90,7 @@ export default function About() {
       degree: "Cloud Architecture, Distributed Systems & Security",
       period: "2024 – Present",
       logo: earth,
+      logoScale: "scale-[1.32]",
       description: "Actively expanding expertise in containerization (Docker), cloud-native patterns, automated CI/CD pipelines, and high-performance system optimization."
     }
   ];
@@ -101,7 +105,7 @@ export default function About() {
           <span>Background</span>
         </div>
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">About Me</h2>
-        
+
         <div className="text-slate-600 dark:text-slate-400 space-y-4 text-sm sm:text-base leading-relaxed">
           <p>
             I am a Software Engineer with a strong focus on Backend and Full-Stack development. My background revolves around engineering secure, data-intensive systems—from encrypted desktop security utilities to national-scale web platforms managing multi-department governance workflows.
@@ -138,12 +142,12 @@ export default function About() {
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-3">
                 <div className="flex items-center gap-3.5">
                   {/* Distinct company avatar / logo */}
-                  <div className="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-800 shadow-sm">
+                  <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex-shrink-0 flex items-center justify-center overflow-hidden border border-slate-200/80 dark:border-slate-700/60 shadow-sm ${job.logo ? 'bg-white p-2' : ''}`}>
                     {job.logo ? (
                       <img
                         src={job.logo}
                         alt={`${job.company} logo`}
-                        className="w-full h-full object-cover"
+                        className={`w-full h-full object-contain ${job.logoScale || ''}`}
                       />
                     ) : (
                       <div className={`w-full h-full bg-gradient-to-br ${job.badgeColor} flex items-center justify-center text-white font-bold text-xs tracking-wider`}>
@@ -238,11 +242,11 @@ export default function About() {
             >
               <div>
                 <div className="flex items-center gap-3.5 mb-3">
-                  <div className="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 p-1">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-white border border-slate-200/80 dark:border-slate-700/60 shadow-sm flex items-center justify-center flex-shrink-0 overflow-hidden p-2">
                     <img
                       src={edu.logo}
                       alt={edu.institution}
-                      className="w-full h-full object-contain"
+                      className={`w-full h-full object-contain ${edu.logoScale || ''}`}
                     />
                   </div>
                   <div>

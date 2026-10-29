@@ -1,54 +1,53 @@
 import React from 'react';
 import { Award, ExternalLink, Calendar, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import softuniLogo from "../assets/softuni.png";
+import huaweiLogo from "../assets/huawei.png";
+import bnspLogo from "../assets/bnsp.png";
+import etsLogo from "../assets/ETS.png";
 
 export default function Certificates() {
-  // DUMMY DATA SERTIFIKAT:
-  // Anda bisa memasukkan gambar logo dengan 2 cara:
-  // 1. Import file dari folder assets (seperti softuniLogo di atas), lalu pasang di properti 'logo'.
-  // 2. Taruh file gambar di folder public/ (misal: public/badges/aws.png), lalu tulis logo: "/badges/aws.png"
-  // 3. Masukkan link URL langsung (https://...).
-  // Jika 'logo' bernilai null atau belum diisi, otomatis akan menampilkan ikon Award.
   const certificates = [
     {
-      title: "Certified Software Engineering (MSIB Full-Stack Track)",
-      issuer: "Software University (SoftUni) Indonesia",
-      logo: softuniLogo, // Menggunakan gambar logo lokal
-      date: "Jan 2025",
-      credentialId: "SOFTUNI-MSIB-2025-8912",
-      credentialUrl: "https://example.com/verify-certificate",
-      skills: ["Python", "Django", "PostgreSQL", "Software Architecture"],
-      highlight: "Graduated with Distinction"
+      title: "Software Engineer with Python",
+      issuer: "SoftUni Indonesia",
+      logo: softuniLogo,
+      logoScale: "scale-[1.28]",
+      date: "Mar 2025",
+      credentialId: "589/567d0391",
+      credentialUrl: "/certificates/Software Engineer with Python - Diploma.pdf",
+      verifyUrl: "https://softuni.id/Certificates/Details/589/567d0391",
+      skills: ["Python", "Django", "PostgreSQL", "Python OOP", "RESTful APIs", "JS Front-End"],
+      highlight: "Professional Qualification Diploma"
     },
     {
-      title: "Backend Web Development & RESTful API Specialization",
-      issuer: "Dicoding Indonesia",
-      logo: null, // Contoh jika tidak ada logo (akan memakai ikon fallback Award)
-      date: "Nov 2024",
-      credentialId: "DCD-BE-2024-7741",
-      credentialUrl: "https://example.com/verify-certificate",
-      skills: ["RESTful APIs", "Database Optimization", "Security Best Practices"],
-      highlight: null
+      title: "HCIA-Cloud Service V3.5 Course",
+      issuer: "Huawei ICT Academy",
+      logo: huaweiLogo,
+      date: "Dec 2025",
+      credentialId: "20251208000343",
+      credentialUrl: "/certificates/Sertifikat HCIA Cloud Service - Huawei ICT Academy.pdf",
+      skills: ["Cloud Computing", "Huawei Cloud", "Storage & Compute", "Virtualization", "Cloud Security"],
+      highlight: "Huawei ICT Academy Certified"
     },
     {
-      title: "Cloud Computing & AWS Architecture Essentials",
-      issuer: "Amazon Web Services (AWS)",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg", // Contoh URL online logo AWS
-      date: "Aug 2024",
-      credentialId: "AWS-CLOUD-2024-3401",
-      credentialUrl: "https://example.com/verify-certificate",
-      skills: ["Cloud Architecture", "EC2 & S3", "VPC & Security"],
-      highlight: "AWS Certified Badge"
+      title: "Junior Web Developer (Pengembang Web Pratama)",
+      issuer: "Badan Nasional Sertifikasi Profesi (BNSP)",
+      logo: bnspLogo,
+      date: "Oct 2022",
+      credentialId: "Reg. TIK.317.04612 2022",
+      credentialUrl: "/certificates/Sertifikat BNSP Junior Web Developer - Randi Syuja.pdf",
+      skills: ["Web Development", "PHP / JavaScript", "Database Design", "Software Quality"],
+      highlight: "National Competency Certificate (BNSP)"
     },
     {
-      title: "Relational Database Design & SQL Optimization",
-      issuer: "Oracle Academy / HackerRank",
-      logo: null, // Fallback icon
-      date: "June 2024",
-      credentialId: "SQL-OPT-2024-1190",
-      credentialUrl: "https://example.com/verify-certificate",
-      skills: ["PostgreSQL", "MySQL", "Indexing", "Query Profiling"],
-      highlight: "Top 5% Assessment Score"
+      title: "TOEIC® Listening & Reading Official Certificate",
+      issuer: "ETS / PT International Test Center (ITC)",
+      logo: etsLogo,
+      date: "Jun 2026",
+      credentialId: "Result No. 2075010",
+      credentialUrl: "/certificates/Sertifikat TOEIC.pdf",
+      skills: ["Professional English", "Listening Comprehension", "Business Reading", "Technical Communication"],
+      highlight: "Score: 735 (Listening: 410, Reading: 325)"
     }
   ];
 
@@ -78,15 +77,15 @@ export default function Certificates() {
               <div className="flex items-start justify-between gap-3 mb-3">
                 <div className="flex items-center gap-3">
                   {/* Certificate Logo Image or Fallback Icon */}
-                  <div className="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 flex items-center justify-center flex-shrink-0 overflow-hidden p-1.5 shadow-sm">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-white border border-slate-200/80 dark:border-slate-700/60 shadow-sm flex items-center justify-center flex-shrink-0 overflow-hidden p-2">
                     {cert.logo ? (
                       <img
                         src={cert.logo}
                         alt={`${cert.issuer} logo`}
-                        className="w-full h-full object-contain"
+                        className={`w-full h-full object-contain ${cert.logoScale || ''}`}
                       />
                     ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-red-500/10 dark:bg-rose-500/10 text-red-600 dark:text-rose-400 rounded-lg">
+                      <div className="w-full h-full flex items-center justify-center bg-red-500/10 text-red-600 rounded-xl">
                         <Award className="w-5 h-5" />
                       </div>
                     )}
@@ -128,23 +127,38 @@ export default function Certificates() {
               </div>
             </div>
 
-            {/* Credential ID and Verification Link */}
+            {/* Credential ID and Links */}
             <div className="pt-3 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between text-xs mt-2">
               <span className="text-[11px] text-slate-400 dark:text-slate-500 font-mono">
                 ID: {cert.credentialId}
               </span>
 
-              {cert.credentialUrl && (
-                <a
-                  href={cert.credentialUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 font-semibold text-red-600 dark:text-rose-400 hover:underline"
-                >
-                  <span>Verify Credential</span>
-                  <ExternalLink className="w-3 h-3" />
-                </a>
-              )}
+              <div className="flex items-center gap-3">
+                {cert.verifyUrl && (
+                  <a
+                    href={cert.verifyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 font-medium text-[11px] text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200"
+                    title="Verify certificate online"
+                  >
+                    <span>Verify</span>
+                    <ExternalLink className="w-2.5 h-2.5" />
+                  </a>
+                )}
+
+                {cert.credentialUrl && (
+                  <a
+                    href={cert.credentialUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 font-semibold text-red-600 dark:text-rose-400 hover:underline"
+                  >
+                    <span>View Certificate</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         ))}

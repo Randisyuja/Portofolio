@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Outer Shield Badge -->
+  <path d="M50 8 C72 8 86 16 86 36 C86 64 50 88 50 88 C50 88 14 64 14 36 C14 16 28 8 50 8 Z" fill="#0F2B5C" stroke="#D4AF37" stroke-width="2.5" />
+  
+  <!-- Inner Shield Accent -->
+  <path d="M50 14 C68 14 80 21 80 37 C80 60 50 80 50 80 C50 80 20 60 20 37 C20 21 32 14 50 14 Z" fill="#143A78" stroke="#D4AF37" stroke-width="0.8" />
+  
+  <!-- Indonesian Flag Colors Banner -->
+  <rect x="36" y="22" width="28" height="6" fill="#E60012" rx="2" />
+  <rect x="36" y="28" width="28" height="6" fill="#FFFFFF" rx="2" />
+  
+  <!-- Gold Stars / Accents -->
+  <circle cx="50" cy="42" r="2.5" fill="#FFD700" />
+  <circle cx="41" cy="43.5" r="1.8" fill="#FFD700" />
+  <circle cx="59" cy="43.5" r="1.8" fill="#FFD700" />
+  
+  <!-- BNSP Typography -->
+  <text x="50" y="58" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="14" fill="#FFFFFF" letter-spacing="1.5">BNSP</text>
+  <text x="50" y="69" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="5" fill="#FFD700" letter-spacing="1">INDONESIA</text>
+</svg>
